@@ -37,7 +37,7 @@ public class SamplePipelineApplication {
     }
 
     @Bean
-    ApplicationListener<JobExecutionEvent> batchListener() {
+    ApplicationListener<JobExecutionEvent> batchJobListener() {
         return event -> {
             var jobExecution = event.getJobExecution();
             var createTime = jobExecution.getCreateTime();
