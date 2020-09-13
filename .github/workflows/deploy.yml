@@ -36,4 +36,4 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: build and run
-        run:  mvn -DskipTests=true -f pom.xml clean deploy  && java -jar target/*jar 
+        run:  mvn -DskipTests=true -f pom.xml clean package  && java -jar target/*jar
