@@ -4,6 +4,8 @@ env:
   ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
   ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
   KINDLEGEN: /home/runner/bin/kindlegen/kindlegen
+  GIT_PASSWORD:  ${{ secrets.GIT_PASSWORD }}
+  GIT_USERNAME:  ${{ secrets.GIT_USERNAME }}
 
 on:
   push:
