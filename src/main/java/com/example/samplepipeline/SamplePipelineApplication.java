@@ -2,18 +2,9 @@ package com.example.samplepipeline;
 
 import bootiful.asciidoctor.DocumentsPublishedEvent;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.batch.JobExecutionEvent;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.ApplicationListener;
-import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
-import org.springframework.context.annotation.Bean;
-import org.springframework.core.env.Environment;
-import bootiful.asciidoctor.DocumentsPublishedEvent;
-import lombok.extern.log4j.Log4j2;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.batch.JobExecutionEvent;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -30,10 +21,10 @@ public class SamplePipelineApplication {
     }
 
     @Bean
-	UsernamePasswordCredentialsProvider usernamePasswordCredentialsProvider(@Value("${GIT_USERNAME}") String user,
-			@Value("${GIT_PASSWORD}") String pw) {
-		return new UsernamePasswordCredentialsProvider(user, pw);
-	}
+    UsernamePasswordCredentialsProvider usernamePasswordCredentialsProvider(@Value("${GIT_USERNAME}") String user,
+                                                                            @Value("${GIT_PASSWORD}") String pw) {
+        return new UsernamePasswordCredentialsProvider(user, pw);
+    }
 
     @Bean
     ApplicationListener<DocumentsPublishedEvent> documentsPublishedListener() {
