@@ -5,7 +5,6 @@ env:
   ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
   KINDLEGEN: /home/runner/bin/kindlegen/kindlegen
 
-
 on:
   push:
     branches: [ master ]
