@@ -40,6 +40,6 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: binaries 
-        run: apt install gs && gem install rghost
+        run: sudo apt install gs && sudo gem install rghost
       - name: build and run
         run:  mvn -DskipTests=true -f pom.xml clean package  && java -jar target/*jar
