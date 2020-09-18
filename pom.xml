@@ -19,11 +19,13 @@
     </properties>
 
     <dependencies>
-                  <dependency>
+                  <dependency> 
+                           <version>     1.11.567</version>
              <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk</artifactId>
         </dependency>
-        <dependency>
+        <dependency> 
+           <version>     1.11.567</version>
              <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-sts</artifactId>
         </dependency>
