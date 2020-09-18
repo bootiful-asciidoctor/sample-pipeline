@@ -40,6 +40,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: configure optimizer binaries 
-        run: sudo apt install  ghostscript  && sudo gem install rghost
+        run: sudo apt install  ghostscript  && sudo gem install asciidoctor  && gem install rghost 
+        
       - name: build and run
         run:  mvn -DskipTests=true -f pom.xml clean package  && java -jar target/*jar
