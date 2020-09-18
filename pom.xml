@@ -19,17 +19,17 @@
     </properties>
 
     <dependencies>
-                  <dependency> 
-                           <version>     1.11.567</version>
-             <groupId>com.amazonaws</groupId>
+        <dependency>
+            <version>1.11.567</version>
+            <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk</artifactId>
         </dependency>
-        <dependency> 
-           <version>     1.11.567</version>
-             <groupId>com.amazonaws</groupId>
+        <dependency>
+            <version>1.11.567</version>
+            <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-sts</artifactId>
         </dependency>
-<!--               -->
+        <!--               -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

@@ -21,8 +21,9 @@ public class SamplePipelineApplication {
     }
 
     @Bean
-    UsernamePasswordCredentialsProvider usernamePasswordCredentialsProvider(@Value("${GIT_USERNAME}") String user,
-                                                                            @Value("${GIT_PASSWORD}") String pw) {
+    UsernamePasswordCredentialsProvider usernamePasswordCredentialsProvider(
+            @Value("${GIT_USERNAME}") String user,
+            @Value("${GIT_PASSWORD}") String pw) {
         return new UsernamePasswordCredentialsProvider(user, pw);
     }
 
