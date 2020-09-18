@@ -43,4 +43,10 @@ jobs:
         run: sudo apt install  ghostscript  && sudo gem install asciidoctor  && sudo gem install rghost
         
       - name: build and run
-        run:  mvn -DskipTests=true -f pom.xml clean package  && java -jar target/*jar
+        run:  mvn -DskipTests=true -f pom.xml clean package  && java -jar target/*jar 
+
+
+
+
+
+
