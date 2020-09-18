@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.batch.JobExecutionEvent;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 
@@ -17,6 +18,12 @@ public class SamplePipelineApplication {
     public static void main(String[] args) {
         SpringApplication.run(SamplePipelineApplication.class, args);
     }
+
+    @Bean
+	UsernamePasswordCredentialsProvider usernamePasswordCredentialsProvider(@Value("${GIT_USERNAME}") String user,
+			@Value("${GIT_PASSWORD}") String pw) {
+		return new UsernamePasswordCredentialsProvider(user, pw);
+	}
 
     @Bean
     ApplicationListener<DocumentsPublishedEvent> documentsPublishedListener() {
