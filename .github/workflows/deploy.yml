@@ -11,6 +11,11 @@ env:
   AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 on:
+  # the next bit is very important: 
+  # the sample-book will fire an update-event (that this will listen for)
+  # that will force this CI pipeline to build the book anew
+  repository_dispatch:
+    types: update-event
   push:
     branches: [ master ]
   pull_request:
