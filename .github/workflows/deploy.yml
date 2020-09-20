@@ -40,7 +40,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: configure optimizer binaries 
-        run: sudo apt install  ghostscript  && sudo gem install asciidoctor  && sudo gem install rghost && which ghostscript
+        run: sudo apt install  ghostscript  && sudo gem install asciidoctor && sudo gem install asciidoctor-pdf-optimize  && sudo gem install rghost && which ghostscript && which asciidoctor-pdf-optimize 
         
       - name: build and run
         run:  mvn -DskipTests=true -f pom.xml clean package  && java -jar target/*jar 
