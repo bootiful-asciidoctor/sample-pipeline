@@ -19,7 +19,7 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-2004
+    runs-on: ubuntu2004
 
 #     runs-on: ubuntu-latest
     steps:
