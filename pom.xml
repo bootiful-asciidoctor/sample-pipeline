@@ -12,7 +12,7 @@
     <artifactId>sample-pipeline</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>sample-pipeline</name>
-
+ 
     <properties>
         <java.version>11</java.version>
     </properties>
