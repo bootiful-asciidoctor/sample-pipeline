@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -18,15 +18,23 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <!--        <dependency>
+                    <artifactId>aws-java-sdk-s3</artifactId>
+                    <groupId>com.amazonaws</groupId>
+                    <version>${aws-java-sdk.version}</version>
+                </dependency>
+                <dependency>
+                    <version>${aws-java-sdk.version}</version>
+                    <groupId>com.amazonaws</groupId>
+                    <artifactId>aws-java-sdk-sts</artifactId>
+                </dependency>-->
         <dependency>
-            <version>${aws-java-sdk.version}</version>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-java-sdk</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-            <version>${aws-java-sdk.version}</version>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-java-sdk-sts</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -38,19 +46,13 @@
             <version>0.0.4-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
     <build>

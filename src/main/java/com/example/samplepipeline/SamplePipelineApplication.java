@@ -1,7 +1,10 @@
 package com.example.samplepipeline;
 
+//import bootiful.asciidoctor.DocumentsPublishedEvent;
+
 import bootiful.asciidoctor.DocumentsPublishedEvent;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +13,9 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
-import org.eclipse.jgit.transport.*;
 
 import java.util.List;
+import java.util.concurrent.Executor;
 
 @Slf4j
 @SpringBootApplication
@@ -29,6 +32,14 @@ public class SamplePipelineApplication {
 	}
 
 	@Bean
+	ApplicationListener<ApplicationReadyEvent> ready(Executor[] executor) {
+		return event -> {
+			for (var e : executor)
+				System.out.println(e.toString());
+		};
+	}
+
+	@Bean
 	ApplicationListener<DocumentsPublishedEvent> documentsPublishedListener() {
 		return event -> {
 			log.info("Ding! The files are ready!");
@@ -38,8 +49,8 @@ public class SamplePipelineApplication {
 
 	@Bean
 	ApplicationListener<ApplicationReadyEvent> applicationReadyListener(Environment environment) {
-		return event -> List.of("pipeline.job.root", "publication.root", "publication.code").forEach(
-				propertyName -> log.info("test " + propertyName + "=" + environment.getProperty(propertyName)));
+		return event -> List.of("pipeline.job.root", "publication.root", "publication.code")
+				.forEach(propertyName -> log.info(propertyName + "=" + environment.getProperty(propertyName)));
 	}
 
 	@Bean
