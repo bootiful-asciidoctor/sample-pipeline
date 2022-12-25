@@ -49,7 +49,7 @@ jobs:
         run: sudo apt install  ghostscript  && sudo gem install asciidoctor && sudo gem install asciidoctor-pdf  && sudo gem install rghost && which ghostscript && which asciidoctor-pdf-optimize 
         
       - name: build and run
-        run:  mvn -DskipTests -U -f pom.xml clean package  && java -jar target/*jar
+        run:  mvn -DskipTests -U -f pom.xml clean  install  && java -jar target/*jar
 
 
 
