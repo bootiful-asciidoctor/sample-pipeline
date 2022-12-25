@@ -24,21 +24,22 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
 
       - name: configure Kindlegen directory
         run: mkdir -p $(dirname $KINDLEGEN ) && ls -la $(dirname $KINDLEGEN)
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up JDK 11
-        uses: actions/setup-java@v1
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          java-version: 11
+          java-version: 17
+          distribution: "open"
 
       - name: Cache Maven packages
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-m2
