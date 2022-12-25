@@ -49,8 +49,8 @@ public class SamplePipelineApplication {
 			var createTime = jobExecution.getCreateTime();
 			var endTime = jobExecution.getEndTime();
 			var jobName = jobExecution.getJobInstance().getJobName();
-			log.info("job (" + jobName + ") start time: " + createTime.toString());
-			log.info("job (" + jobName + ") stop time: " + endTime.toString());
+			log.info("job (" + jobName + ") start time: " + createTime);
+			log.info("job (" + jobName + ") stop time: " + endTime);
 		};
 	}
 
